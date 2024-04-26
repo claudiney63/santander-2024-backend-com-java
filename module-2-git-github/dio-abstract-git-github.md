@@ -1,4 +1,4 @@
-## Salvando Alterações no Repositório Local
+## Aula - Salvando Alterações no Repositório Local
 
 **Introdução**
 
@@ -70,15 +70,109 @@ Nesta aula, abordaremos como salvar as alterações feitas nos arquivos do seu p
 
     - `!arquivo.txt`: Inclui o arquivo `arquivo.txt` no versionamento, mesmo que ele corresponda a outro padrão de ignorar.
 
+## Aula - Desfazendo Alterações no Repositório Local
+
+**Introdução**
+
+Nesta aula, abordaremos os comandos Git para desfazer alterações no repositório local. O Git oferece diversas ferramentas para reverter mudanças em arquivos, commits e até mesmo o histórico do repositório. Compreender essas ferramentas é crucial para lidar com erros, voltar a um estado anterior do projeto ou realizar ajustes finos no histórico de commits.
+
+**Comandos Git para Desfazer Alterações**
+
+### `git restore`
+
+O comando `git restore` permite restaurar um arquivo ou pasta para um estado anterior, mesmo que o arquivo não tenha sido adicionado ao staging area. Ele não altera o histórico de commits.
+
+**Sintaxe:**
+
+```bash
+git restore <caminho_do_arquivo> [<revisao>]
+```
+
+**Exemplo:**
+
+```bash
+git restore arquivo.txt HEAD~1 # Restaura o arquivo "arquivo.txt" para a revisão anterior (HEAD~1)
+```
+
+### `git reset`
+
+O comando `git reset` é mais abrangente que o `git restore` e permite desfazer alterações em arquivos, commits e até mesmo o histórico do repositório.
+
+**Sintaxe:**
+
+```bash
+git reset <revisao> [--soft] [--mixed] [--hard]
+```
+
+**Opções:**
+
+* `--soft` (padrão): Desfaz as alterações no staging area e nos commits subsequentes, mas mantém os arquivos modificados no disco de trabalho.
+* `--mixed`: Desfaz as alterações no staging area e nos commits subsequentes, mas preserva as alterações nos arquivos modificados no disco de trabalho.
+* `--hard`: Desfaz as alterações no staging area, nos commits subsequentes e nos arquivos modificados no disco de trabalho.
+
+**Exemplo:**
+
+```bash
+git reset HEAD~2 --mixed # Desfaz as alterações no staging area e nos commits subsequentes, mas preserva as alterações nos arquivos modificados no disco de trabalho dos últimos 2 commits.
+```
+
+**Observações:**
+
+* O uso do `git reset` com cuidado, pois pode levar à perda de dados não confirmados.
+* Utilize o `git log` para verificar o histórico de commits antes de usar o `git reset`.
+
+### `git commit --amend`
+
+O comando `git commit --amend` permite modificar o último commit, alterando a mensagem do commit ou adicionando arquivos esquecidos.
+
+**Sintaxe:**
+
+```bash
+git commit --amend [-m <nova_mensagem>]
+```
+
+**Exemplo:**
+
+```bash
+git commit --amend -m "Mensagem do commit atualizada" # Atualiza a mensagem do último commit.
+```
+
+### `git reflog`
+
+O comando `git reflog` exibe o histórico de todos os HEADs do repositório, incluindo commits descartados e alterações no HEAD.
+
+**Sintaxe:**
+
+```bash
+git reflog
+```
+
+**Exemplo:**
+
+```bash
+git reflog # Exibe o histórico de todos os HEADs do repositório.
+```
+
+### `git status`
+
+O comando `git status` fornece informações sobre o estado do repositório, incluindo arquivos modificados, novos arquivos e arquivos ignorados.
+
+**Sintaxe:**
+
+```bash
+git status
+```
+
+**Exemplo:**
+
+```bash
+git status # Exibe o estado do repositório.
+```
+
 **Práticas Recomendadas**
 
-* **Commits Frequentes:** É recomendável realizar commits frequentes, mesmo que as alterações sejam pequenas. Isso facilita o acompanhamento do histórico do projeto e a recuperação de versões anteriores, caso necessário.
-* **Mensagens de Commit Descritivas:** Utilize mensagens de commit claras e concisas para descrever as mudanças realizadas. Isso facilita a compreensão do histórico do projeto e a identificação de problemas específicos.
-* **Organização dos Arquivos:** Mantenha seus arquivos organizados e utilize nomes descritivos para facilitar a navegação e o gerenciamento do projeto.
-
-**Recursos Adicionais**
-
-* Documentação Git: [https://git-scm.com/docs/git-status](https://git-scm.com/docs/git-status)
-* Comando Git Add: [https://git-scm.com/docs/git-add](https://git-scm.com/docs/git-add)
-* Comando Git Commit: [https://git-scm.com/docs/git-commit](https://git-scm.com/docs/git-commit)
-* Comando Git Log: [https://git-scm.com/docs/git-log](https://git-scm.com/docs/git-log)
+* Utilize o `git restore` para restaurar arquivos específicos para um estado anterior.
+* Utilize o `git reset` com cuidado, especialmente com a opção `--hard`, pois pode levar à perda de dados não confirmados.
+* Utilize o `git commit --amend` para modificar o último commit de forma segura.
+* Utilize o `git reflog` para recuperar um HEAD descartado acidentalmente.
+* Utilize o `git status` frequentemente para verificar o estado do repositório e identificar arquivos modificados ou esquecidos.
