@@ -52,23 +52,21 @@ Nesta aula, abordaremos como salvar as alterações feitas nos arquivos do seu p
 
 5. **Criando o Arquivo .gitignore**
 
-O arquivo `.gitignore` deve ser criado na raiz do seu repositório Git. Você pode utilizar qualquer editor de texto para criá-lo.
+    O arquivo `.gitignore` deve ser criado na raiz do seu repositório Git. Você pode utilizar qualquer editor de texto para criá-lo.
 
-**Sintaxe do .gitignore**
+    Cada linha no arquivo `.gitignore` representa um padrão a ser ignorado. O Git utiliza padrões globais para identificar os arquivos que devem ser ignorados.
 
-Cada linha no arquivo `.gitignore` representa um padrão a ser ignorado. O Git utiliza padrões globais para identificar os arquivos que devem ser ignorados.
-
-* **Padrões Simples:**
+    * **Padrões Simples:**
 
    - `arquivo.txt`: Ignora o arquivo `arquivo.txt`.
    - `pasta/`: Ignora todos os arquivos e subpastas dentro da pasta `pasta`.
 
-* **Caracteres curinga:**
+    * **Caracteres curinga:**
 
    - `*.txt`: Ignora todos os arquivos com extensão `.txt`.
    - `pasta/*`: Ignora todos os arquivos dentro da pasta `pasta`, mas não as subpastas.
 
-* **Negação:**
+    * **Negação:**
 
    - `!arquivo.txt`: Inclui o arquivo `arquivo.txt` no versionamento, mesmo que ele corresponda a outro padrão de ignorar.
 
