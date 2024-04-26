@@ -58,17 +58,17 @@ Nesta aula, abordaremos como salvar as alterações feitas nos arquivos do seu p
 
     * **Padrões Simples:**
 
-   - `arquivo.txt`: Ignora o arquivo `arquivo.txt`.
-   - `pasta/`: Ignora todos os arquivos e subpastas dentro da pasta `pasta`.
+    - `arquivo.txt`: Ignora o arquivo `arquivo.txt`.
+    - `pasta/`: Ignora todos os arquivos e subpastas dentro da pasta `pasta`.
 
     * **Caracteres curinga:**
 
-   - `*.txt`: Ignora todos os arquivos com extensão `.txt`.
-   - `pasta/*`: Ignora todos os arquivos dentro da pasta `pasta`, mas não as subpastas.
+    - `*.txt`: Ignora todos os arquivos com extensão `.txt`.
+    - `pasta/*`: Ignora todos os arquivos dentro da pasta `pasta`, mas não as subpastas.
 
     * **Negação:**
 
-   - `!arquivo.txt`: Inclui o arquivo `arquivo.txt` no versionamento, mesmo que ele corresponda a outro padrão de ignorar.
+    - `!arquivo.txt`: Inclui o arquivo `arquivo.txt` no versionamento, mesmo que ele corresponda a outro padrão de ignorar.
 
 **Práticas Recomendadas**
 
