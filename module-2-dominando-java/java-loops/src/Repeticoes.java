@@ -11,6 +11,11 @@ public class Repeticoes {
             System.out.println("array[" + i + "] = " + array[i]);
         }
 
+        //for each
+        for (int i : array) {
+            System.out.println("i = " + i);
+        }
+
         //break e continue
         for (int i = 0; i < 10; i++) {
             if (i == 5) {
