@@ -1,15 +1,14 @@
 package escola;
 
 public class Aluno {
-    public String nome;
-    public int idade;
+    private String nome;
+    private int idade;
     private String sexo;
+    private String cpf;
 
     //constructor
-    public Aluno() {
-        this.nome = "Não informado";
-        this.idade = 0;
-        this.sexo = "Não informado";
+    public Aluno(String cpf) {
+        this.cpf = cpf;
     }
 
     public int getIdade() {
@@ -34,5 +33,9 @@ public class Aluno {
 
     public String getSexo() {
         return sexo;
+    }
+
+    public String getCpf() {
+        return cpf;
     }
 }
