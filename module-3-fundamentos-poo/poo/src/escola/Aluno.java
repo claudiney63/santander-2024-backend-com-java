@@ -4,6 +4,7 @@ public class Aluno {
     private String nome;
     private int idade;
     private String sexo;
+    private String endereco;
     private String cpf;
 
     //constructor
@@ -37,5 +38,17 @@ public class Aluno {
 
     public String getCpf() {
         return cpf;
+    }
+
+    public void setCpf(String newCpf) {
+        this.cpf = newCpf;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String newEndereco) {
+        this.endereco = newEndereco;
     }
 }

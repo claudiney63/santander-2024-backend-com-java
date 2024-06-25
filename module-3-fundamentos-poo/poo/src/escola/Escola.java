@@ -7,8 +7,13 @@ public class Escola {
         aluno.setIdade(15);
         aluno.setSexo("Masculino");
 
+        EstadoBrasileiro sp = EstadoBrasileiro.SAO_PAULO;
+
+        aluno.setEndereco(sp.getNome() + ", " + sp.getSigla());
+
         System.out.println("Aluno " + aluno.getNome() + " tem Idade " + aluno.getIdade() + " anos.");
         System.out.println("Sexo: " + aluno.getSexo());
         System.out.println("CPF: " + aluno.getCpf());
+        System.out.println("Endereço: " + aluno.getEndereco());
     }
 }
